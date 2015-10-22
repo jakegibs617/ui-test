@@ -3,15 +3,22 @@
 #
 # Examples:
 #
-  # cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  # cities = City.create([{ user: 'Chicago' }, { user: 'Copenhagen' }])
+#   Mayor.create(user: 'Emanuel', city: cities.first)
 
 
-Game.create(name: "Janet Pluchinsky", score: 10)
-Game.create(name: "Eliot Waugh", score: 1)
-Game.create(name: "Alice Quinn", score: 27)
-Game.create(name: "Julia Wicker", score: 7)
-Game.create(name: "Quentin Coldwater", score: 0)
-Game.create(name: "Janet Pluchinsky", score: 20)
-Game.create(name: "Julia Wicker", score: 20)
-Game.create(name: "Jollyby", score: 42)
+User.create(name: "Janet Pluchinsky")
+User.create(name: "Eliot Waugh")
+User.create(name: "Alice Quinn")
+User.create(name: "Julia Wicker")
+User.create(name: "Quentin Coldwater")
+User.create(name: "Jollyby")
+
+Game.create(user_id: 1, score: 10)
+Game.create(user_id: 2, score: 1)
+Game.create(user_id: 3, score: 27)
+Game.create(user_id: 4, score: 7)
+Game.create(user_id: 5, score: 0)
+Game.create(user_id: 1, score: 20)
+Game.create(user_id: 4, score: 20)
+Game.create(user_id: 6, score: 42)

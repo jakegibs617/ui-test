@@ -1,0 +1,23 @@
+<h1>Darts Ranking Leaderboard</h1>
+
+  <% @users.each do |user| %>
+    <% @games.each do |game| %>
+      <% unless user.id != game.user_id || game.user_id == nil %>
+        <% user.total_score += game.score %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% sorted_array = @users.sort_by { |user| user.total_score }.reverse %>
+
+  <% sorted_array.each do |user| %>
+    <ul id="rankings">
+      <%= user.name %>
+      <%= user.total_score %>
+      points
+    </ul>
+  <% end %>
+<hr>
+
+<%= button_to "Add to Rankings", new_game_path, id: 'add', method: :get  %>
+<%= button_to "Clear Rankings", remove_all_games_path, id: 'clear', method: :get %>

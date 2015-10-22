@@ -7,16 +7,15 @@
   </head>
 
   <body>
-    <h1>Rankings</h1>
-    <input type="text">
-    <br>
-    <button id="add">Add To Rankings</button>
-
-    <ul id="rankings"></ul>
-    <button id="clear">Clear Rankings</button>
 
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.0.0/lodash.min.js"></script> -->
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %> text-center error-explanation columns">
+        <%= value %>
+      </div>
+    <%- end -%>
+
     <%= yield %>
     <script src="js/main.js"></script>
 
